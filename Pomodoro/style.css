@@ -3,3 +3,7 @@ body{
     background-color: crimson;
     text-align: center;
 }
+
+div p{
+    display: inline;
+}

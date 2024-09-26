@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <script defer src="index.js"></script>
     <link rel = "stylesheet" href="style.css">
-
+    <script src="https://kit.fontawesome.com/2a860fb14d.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -15,16 +15,21 @@
 <body>
     <h1> TIMER POMODORO</h1>
     <div id="barre_travail">
-        <p> travail</p>
-        <p> pause</p>
+        <p id="p_travail"> travail</p>
+        <p id="p_pause"> pause</p>
+    </div>
+    <div class="center">
+        <div id="cercle" class="center">
+            <p id="min"> 00</p>
+         <p> :</p>
+            <p id="sec"> 10</p>
+        </div>
     </div>
     <div>
-        <p id="min"> 00</p>
-        <p> :</p>
-        <p id="sec"> 10</p>
+        <i onclick="decompte()" id="lancer" class="fa-solid fa-play fa-2xl" style="color: #ffffff;" alt="bouton play" title="play" ></i>
+        <i onclick="reset()" class="fa-solid fa-rotate-left fa-2xl" style="color: #ffffff;" alt="bouton reset" title="reset"></i>
     </div>
-    <button id="lancer" onclick="decompte()">lancer </button>
-    <button id="reset" onclick="reset()">reset </button>
+    
     
 </body>
 </html>

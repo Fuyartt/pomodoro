@@ -2,6 +2,8 @@ let interval = null;
 let work_min = 24;
 let rest_min = 4;
 let work_or_rest = "work"
+let decompteur = true;
+document.getElementById("p_travail").style.color ="lightgreen";
 
 function initialize(option){
     if (option == true){
@@ -21,7 +23,10 @@ function decompte(){
     let compteur_min = 24
     let p_min = document.getElementById("min");
     let p_sec = document.getElementById("sec");
-    initialize(true);
+    if(decompteur == true){
+        initialize(true);
+        decompteur = false;
+    }
 
   /* p_sec.textContent = parseInt(p_sec.textContent) -1
    if(parseInt(p_sec.textContent)<10){
@@ -55,9 +60,14 @@ function deroule(){
                 if(work_or_rest == "work"){
                     p_min.textContent = rest_min;
                     work_or_rest = "rest"
+                    document.getElementById("p_travail").style.color ="grey";
+                    document.getElementById("p_pause").style.color ="lightgreen";
+                    
                 }else{
                     p_min.textContent = work_min;
                     work_or_rest = "work"
+                    document.getElementById("p_pause").style.color ="grey";
+                    document.getElementById("p_travail").style.color ="lightgreen";
                 }
              } else{
                 p_min.textContent = 0 +p_min.textContent

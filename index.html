@@ -14,16 +14,32 @@
 </head>
 <body>
     <h1> TIMER POMODORO</h1>
+
     <div id="barre_travail">
         <p id="p_travail"> travail</p>
         <p id="p_pause"> pause</p>
     </div>
-    <div id="popup" class="center">
-        <h5> Parametrez les temps de travail et de pause </h5>
-
-        
     
-    </div>
+    <section  class="center">
+        <div id="popup">
+            <div id="div_croix_parametre">
+                <button onclick="fermer_parametre()"><i class="fa-solid fa-circle-xmark fa-2xl" style="color: #ffffff;"  title="fermer"></i></button>
+            </div>
+            <h4> Parametrez les temps de travail et de pause </h4>
+            <form class="center">
+                <div id="div_temps_travail">
+                    <label>Temps de travail </label>
+                    <input id="input_travail" type="number" min="10" max="120" step="1" placeholder="min"  >
+                </div>
+                <div id="div_temps_pause">
+                    <label>Temps de pause </label>
+                    <input id="input_pause" type="number" min="5" max="120" step="1" placeholder="min" >
+                </div>
+            </form>
+            <button onclick="apllication_parametre()"><i class="fa-solid fa-circle-check fa-2xl" style="color: #ffffff;"  title="valider"></i></button>
+        </div>
+    </section>
+
     <div class="center">
         <div id="cercle" class="center">
             <p id="min"> 25</p>
@@ -32,9 +48,9 @@
         </div>
     </div>
     <div>
-        <button onclick="decompte()" id="lancer"><i class="fa-solid fa-play fa-2xl" style="color: #ffffff;" alt="bouton play" title="play" ></i> </button>
-        <button onclick="reset()"><i class="fa-solid fa-rotate-left fa-2xl" style="color: #ffffff;" alt="bouton reset" title="reset"></i> </button> 
-        <button onclick="parametrer()" id="bouton_param"><i class="fa-solid fa-gear fa-2xl" style="color: #ffffff;"></i> </button>
+        <button onclick="decompte()" id="lancer"><i class="fa-solid fa-play fa-2xl" style="color: #ffffff;"  title="play" ></i> </button>
+        <button onclick="reset()"><i class="fa-solid fa-rotate-left fa-2xl" style="color: #ffffff;"  title="recommencer"></i> </button> 
+        <button onclick="ouvrir_parametre()" id="bouton_param"><i class="fa-solid fa-gear fa-2xl" style="color: #ffffff;" title="paramètres"></i> </button>
         
     </div>
     

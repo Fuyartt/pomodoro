@@ -1,6 +1,6 @@
 let interval = null;
-let work_min = 24;
-let rest_min = 4;
+let work_min = 25;
+let rest_min = 5;
 let work_or_rest = "work"
 let decompteur = true;
 document.getElementById("p_travail").style.color ="lightgreen";
@@ -27,8 +27,72 @@ function decompte(){
 
 }
 
-function parametrer(){
-    document.getElementById("popup").style.display = "flex";
+function fermer_parametre(){
+    document.getElementById("popup").style.display = "none";
+}
+
+
+function parametre_test_est_nombre(input_travail,input_pause){
+    if(input_travail == ""){
+        alert("le champs du temps de travail ne doit contenir que des chiffres")
+        return false
+    } else{
+        if(!Number.isInteger(parseFloat(input_travail))){
+            alert("le champs du temps de travail ne doit contenir que des nombres entier")
+            return false
+        }
+    }
+    if(input_pause == ""){
+        alert("le champs du temps de pause ne doit contenir que des chiffres")
+        return false
+    } else{
+        if(!Number.isInteger(parseFloat(input_pause))){
+            alert("le champs du temps de pause ne doit contenir que des nombres entier")
+            return false
+        }
+    }
+    return true
+}
+
+
+function parametre_test_interval(input_travail,input_pause){
+    if(parseFloat(input_travail) < 10 || parseFloat(input_travail) > 120 ){
+        alert("le temps de travail doit être compris entre 10 et 120 minutes")
+        return false
+    }
+    if(parseFloat(input_pause) < 2 || parseFloat(input_pause) > 30 ){
+        alert("le temps de pause doit être compris entre 2 et 30 minutes")
+        return false
+    }
+    if(parseFloat(input_pause) > parseFloat(input_travail)){
+        alert("le temps de pause ne peut pas être plus grand que le temps de travail")
+        return false
+    }
+    return true
+}
+
+function apllication_parametre(){
+    let input_travail = document.getElementById("input_travail").value;
+    let input_pause = document.getElementById("input_pause").value;
+    if(parametre_test_est_nombre(input_travail,input_pause)){
+        if(parametre_test_interval(input_travail,input_pause)){
+            document.getElementById("min").textContent = input_travail
+            document.getElementById("sec").textContent = "00"
+            work_min = parseInt(input_travail);
+            rest_min = parseInt(input_pause);
+            fermer_parametre()
+
+         }
+
+    }
+        
+
+}
+
+function ouvrir_parametre(){
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("input_travail").placeholder  = work_min
+    document.getElementById("input_pause").placeholder  = rest_min
 }
 
 function deroule(){
@@ -65,7 +129,3 @@ function deroule(){
      }
 }
 }
-
-
-let lancer = document.getElementById("lancer")
-//lancer.addEventListener('click',decompte(),false);

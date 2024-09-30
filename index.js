@@ -5,6 +5,7 @@ let work_or_rest = "work"
 let decompteur = true;
 document.getElementById("p_travail").style.color ="lightgreen";
 
+
 function initialize(option){
     if (option == true){
         interval = setInterval(deroule,1000);
@@ -24,6 +25,10 @@ function decompte(){
         decompteur = false;
     }
 
+}
+
+function parametrer(){
+    document.getElementById("popup").style.display = "flex";
 }
 
 function deroule(){

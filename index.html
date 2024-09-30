@@ -18,6 +18,12 @@
         <p id="p_travail"> travail</p>
         <p id="p_pause"> pause</p>
     </div>
+    <div id="popup" class="center">
+        <h5> Parametrez les temps de travail et de pause </h5>
+
+        
+    
+    </div>
     <div class="center">
         <div id="cercle" class="center">
             <p id="min"> 25</p>
@@ -26,8 +32,10 @@
         </div>
     </div>
     <div>
-        <i onclick="decompte()" id="lancer" class="fa-solid fa-play fa-2xl" style="color: #ffffff;" alt="bouton play" title="play" ></i>
-        <i onclick="reset()" class="fa-solid fa-rotate-left fa-2xl" style="color: #ffffff;" alt="bouton reset" title="reset"></i>
+        <button onclick="decompte()" id="lancer"><i class="fa-solid fa-play fa-2xl" style="color: #ffffff;" alt="bouton play" title="play" ></i> </button>
+        <button onclick="reset()"><i class="fa-solid fa-rotate-left fa-2xl" style="color: #ffffff;" alt="bouton reset" title="reset"></i> </button> 
+        <button onclick="parametrer()" id="bouton_param"><i class="fa-solid fa-gear fa-2xl" style="color: #ffffff;"></i> </button>
+        
     </div>
     
     

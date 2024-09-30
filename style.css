@@ -3,6 +3,7 @@ body{
     background-color: crimson;
     text-align: center;
     color: white;
+    z-index: 1;
 }
 
 div p{
@@ -26,7 +27,7 @@ h1{
     padding-top: 1vh;
     padding-bottom: 1vh;
     display: inline;
-    color : grey;
+    color : white;
     border-color: crimson;
     box-shadow: 1px 2px 2px 2px black;
     
@@ -47,10 +48,25 @@ h1{
     margin-bottom: 3vh;
     width: 40vh;
     height: 40vh;
-    background-color: red;
+    background-color: orange;
     border-radius: 50%;
     text-align: center;
     box-shadow:0 0 3px 3px  black;
+}
+
+button{
+    border: 0px;
+    background-color: #11ffee00;
+}
+
+#popup{
+    display:none;
+    position:fixed;
+    z-index: 2;
+    background-color: lightblue;
+    opacity: 0.9;
+
+
 }
 
 

@@ -1,3 +1,5 @@
-#Pomodoro
-## un minuteur qui fait alternance entre le temps de travail et le temps de pause d'après la méthode de travail du même nom
+## Pomodoro
+## Projet web de 2ème année de BUT informatique.
+## Réalisation d'un chronomètre en ligne permettant de travailler en deux période d'après la méthode Pomodoro
+# Le changement de période se fait automatiquement et il est possible de définir soi même son temps de travail
 ## https://fuyartt.github.io/pomodoro/

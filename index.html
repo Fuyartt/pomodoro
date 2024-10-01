@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Minuteur automatique pour travailler en suivant la methode Pomodoro">
     <script defer src="index.js"></script>
     <link rel = "stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/2a860fb14d.js" crossorigin="anonymous"></script>
@@ -13,13 +14,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1> TIMER POMODORO</h1>
+    <!-- Titre de l'application web-->
+
+    <header>
+        <h1> TIMER POMODORO</h1>
+    </header>
+
+    <!-- Conteneur de la barre des périodes de travail-->
 
     <div id="barre_travail">
         <p id="p_travail"> travail</p>
         <p id="p_pause"> pause</p>
     </div>
-    
+
+    <!-- La page de choix des préférence de temps ( est invisible tant qu'on a pas appuyé sur le bouton)-->
+
     <section  class="center">
         <div id="popup">
             <div id="div_croix_parametre">
@@ -28,17 +37,21 @@
             <h4> Parametrez les temps de travail et de pause </h4>
             <form class="center">
                 <div id="div_temps_travail">
-                    <label>Temps de travail </label>
+                    <label>Temps de travail 
                     <input id="input_travail" type="number" min="10" max="120" step="1" placeholder="min"  >
+                    </label>
                 </div>
                 <div id="div_temps_pause">
-                    <label>Temps de pause </label>
+                    <label>Temps de pause 
                     <input id="input_pause" type="number" min="5" max="120" step="1" placeholder="min" >
+                    </label>
                 </div>
             </form>
             <button onclick="apllication_parametre()"><i class="fa-solid fa-circle-check fa-2xl" style="color: #ffffff;"  title="valider"></i></button>
         </div>
     </section>
+
+    <!-- conteneur du cercle d'affichage du chronomètre -->
 
     <div class="center">
         <div id="cercle" class="center">
@@ -47,8 +60,10 @@
             <p id="sec"> 00</p>
         </div>
     </div>
+
+    <!-- conteneur des boutons d'actions principaux-->
     <div>
-        <button onclick="decompte()" id="lancer"><i class="fa-solid fa-play fa-2xl" style="color: #ffffff;"  title="play" ></i> </button>
+        <button onclick="lancement()" id="lancer"><i class="fa-solid fa-play fa-2xl" style="color: #ffffff;"  title="play" ></i> </button>
         <button onclick="reset()"><i class="fa-solid fa-rotate-left fa-2xl" style="color: #ffffff;"  title="recommencer"></i> </button> 
         <button onclick="ouvrir_parametre()" id="bouton_param"><i class="fa-solid fa-gear fa-2xl" style="color: #ffffff;" title="paramètres"></i> </button>
         
